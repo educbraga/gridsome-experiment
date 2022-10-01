@@ -6,5 +6,14 @@
 
 module.exports = {
   siteName: 'Gridsome',
-  plugins: []
+  plugins: [
+    {
+      use: 'gridsome-source-google-sheets',
+      options: {
+        sheetId: process.env.SHEET_ID, 
+        apiKey: process.env.API_KEY, 
+        // type: 'TYPE_NAME', //Optional - default is googleSheet. Used for graphql queries.
+      }
+    }
+  ]
 }
